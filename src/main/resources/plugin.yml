@@ -1,0 +1,21 @@
+name: ImpostorGame
+version: 1.0.0
+main: com.selim.impostorgame.ImpostorGamePlugin
+api-version: '26.2'
+author: Selim
+description: Among Us style impostor minigame with role reveals, RTP, a tracker compass, and win conditions.
+
+commands:
+  impstart:
+    description: Starts the Impostor game with all online players
+    usage: /impstart
+    permission: impostorgame.admin
+  impostorgame:
+    description: Manage the Impostor Game plugin
+    usage: /impostorgame <reload|stop>
+    permission: impostorgame.admin
+
+permissions:
+  impostorgame.admin:
+    description: Allows starting and managing the impostor game
+    default: op
