@@ -1,0 +1,112 @@
+# ============================================
+#  ImpostorGame Configuration
+# ============================================
+
+rtp:
+  # Radius (in blocks) around each player's current position used
+  # for the random teleport when /impstart is used.
+  range: 300
+
+game:
+  # Whether to clear player inventories when a new round starts
+  clear-inventory: true
+
+respawn:
+  # How many times the impostor is allowed to respawn before dying
+  # kicks them (eliminated) just like everyone else.
+  impostor-respawns: 1
+
+timer:
+  # Countdown shown on everyone's action bar for the whole round. If time
+  # runs out before the impostor is caught, the impostor wins automatically.
+  # Set enabled to false, or all three duration values to 0, to turn it off.
+  enabled: true
+  duration-hours: 0
+  duration-minutes: 15
+  duration-seconds: 0
+
+messages:
+  # Role reveal (shown as a title, not in chat)
+  impostor-role: "&c&lSEN HAİNSİN"
+  impostor-subtitle: "&7Yakalanmadan herkesi öldür!"
+  crewmate-role: "&a&lSEN MASUMSUN"
+  crewmate-subtitle: "&7Hainin kim olduğunu bul!"
+  # Message sent ONLY to the impostor whenever they get a kill
+  impostor-kill: "&cBirini öldürdün!"
+
+  # Ability dye toggle (action bar)
+  ability-on: "&aYetenekler aktif edildi!"
+  ability-off: "&7Yetenekler kapatıldı."
+
+  # Tracker compass GUI
+  tracker-gui-title: "Oyuncu Takip Cihazı"
+  tracker-nearest-item: "&aEn yakındaki oyuncu"
+  tracker-furthest-item: "&cEn uzaktaki oyuncu"
+  tracker-nearest-selected: "&aArtık en yakındaki oyuncuyu takip ediyorsun."
+  tracker-furthest-selected: "&cArtık en uzaktaki oyuncuyu takip ediyorsun."
+
+  # Item display names / lore
+  compass-item-name: "&e&lTakip Cihazı"
+  compass-item-lore: "&7Bir oyuncuyu takip etmek için sağ tıkla"
+  ability-item-name: "&lYetenek"
+  ability-item-lore: "&7Yeteneğini açıp kapatmak için sağ tıkla"
+
+  # Command feedback
+  no-permission: "&cBunu yapmaya yetkin yok."
+  game-already-running: "&cZaten bir oyun devam ediyor! Önce /impostorgame stop ile durdur."
+  not-enough-players: "&cOyunu başlatmak için en az 2 çevrimiçi oyuncu gerekiyor."
+  game-started: "&aHain Oyunu {player_count} oyuncuyla başladı!"
+  usage-impostorgame: "&eKullanım: /impostorgame <reload|stop>"
+  config-reloaded: "&aImpostorGame ayarları yeniden yüklendi."
+  game-stopped: "&aHain Oyunu durduruldu."
+  msg-disabled: "&cÖzel mesajlar kapalı. Lütfen sesli sohbeti kullanın."
+
+  # Elimination - players are kicked (not banned) when they die, and can
+  # rejoin to spectate the rest of the round.
+  eliminated-kick: "&cElendin! Tekrar sunucuya katılarak izleyici olabilirsin."
+  now-spectating: "&7Şu an oyunu izliyorsun."
+
+  # Spectator menu (nether star item given to eliminated players)
+  spectator-item-name: "&d&lOyuncuları izle"
+  spectator-gui-title: "İzleyici Menüsü"
+  spectator-impostor-item: "&cHain"
+  spectator-crewmates-item: "&aMasumlar"
+  spectator-back-item: "&7« Geri"
+  spectator-target-offline: "&cO oyuncu şu anda çevrimdışı."
+
+  # Win conditions, broadcast to everyone when a round ends
+  crewmates-win: "&a&lMASUMLAR KAZANDI! &7Hain elendi."
+  crewmates-win-dragon: "&a&lMASUMLAR KAZANDI! &7Ejderha öldürüldü."
+  impostor-win: "&c&lHAİN KAZANDI! &7Tüm masumlar elendi."
+  impostor-win-timeout: "&c&lHAİN KAZANDI! &7Süre doldu."
+
+  # Countdown shown on the action bar. {time} becomes something like 5:00:00
+  timer-format: "&eKalan süre: {time}"
+
+rules:
+  # Disables all normal chat messages (a voice chat plugin is expected instead)
+  block-chat: true
+  # Disables /msg, /tell, /w and similar private message commands
+  block-msg-commands: true
+  blocked-commands:
+    - msg
+    - tell
+    - w
+    - whisper
+    - r
+    - reply
+    - t
+    - emsg
+    - em
+    - message
+    - mail
+  # Removes the "Player died..." style messages from chat
+  block-death-messages: true
+  # Removes the "Player joined the game" / "Player left the game" messages
+  block-join-leave-messages: true
+  # Hides every player from everyone's tab list (Tab key overlay).
+  # Players stay fully visible and interactable in the world - tab-list only.
+  hide-tab-list: true
+  # Hides the floating name label above every player's head.
+  # Players stay fully visible and interactable in the world - nametag only.
+  hide-nametags: true
